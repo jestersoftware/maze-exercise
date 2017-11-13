@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import DropDownMenu from 'material-ui/DropDownMenu'
 import MenuItem from 'material-ui/MenuItem'
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar'
+import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar'
 import AppBar from 'material-ui/AppBar'
 import Snackbar from 'material-ui/Snackbar'
 

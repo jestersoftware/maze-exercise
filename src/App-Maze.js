@@ -16,7 +16,7 @@ class AppMaze extends Component {
       const mazeWidth = MazeService().getMazeWidth(this.props.maze)
       const mazeHeight = MazeService().getMazeHeight(this.props.maze)
 
-      const sizeFactor = Math.min(50, parseInt(1600 / mazeWidth))
+      const sizeFactor = Math.min(50, parseInt(1600 / mazeWidth, 10))
 
       return mazeColumns.map((mazeColumn, mazeColumnIndex) => {
         const partsIndex = `x${mazeColumnIndex}y${mazeRowIndex}`

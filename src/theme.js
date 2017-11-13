@@ -2,8 +2,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import {
   cyan500,
-  cyan700,
-  pinkA200,
   grey100,
   grey300,
   grey400,
