@@ -65,7 +65,7 @@ class AppMaze extends Component {
           height: sizeFactor,
           margintop: 1,
           marginLeft: 1,
-          border: '1px solid lightgray',
+          border: '1px solid transparent',
           backgroundColor: backgroundColor
         }
 
@@ -106,8 +106,6 @@ class AppMaze extends Component {
     }
 
     const getRows = () => {
-      // let startTime = Date.now()
-
       const mazeRows = this.props.maze.mazeRows.map((mazeRow, mazeRowIndex) => {
         const mazeColumnsJsx = getColumns(mazeRow.columns, mazeRowIndex)
 
@@ -118,22 +116,17 @@ class AppMaze extends Component {
         )
       })
 
-      // let endTime = Date.now()
-
-      // console.log((endTime - startTime) / 1000)
-
       return mazeRows
     }
 
     const mazeRowsJsx = getRows()
 
     return (
-      <div style={{ display: 'inline-block', margin: '0 auto', maxWidth: '90%' }}>
+      <div style={{ display: 'inline-block', margin: '0 auto', maxWidth: '90%', boxShadow: '0 1px 8px 2px rgba(0, 0, 0, .25)' }}>
         {mazeRowsJsx}
       </div>
     )
   }
 }
-
 
 export default AppMaze

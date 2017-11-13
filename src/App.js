@@ -18,8 +18,6 @@ import myTheme from './theme'
 
 const MazeService = require('./service-maze.js')
 
-// import logo from './logo.svg'
-
 class App extends Component {
   state = {
     mazes: [{ mazeName: 'maze1' }, { mazeName: 'maze2' }, { mazeName: 'maze3' }],
@@ -38,7 +36,7 @@ class App extends Component {
   }
 
   parseMaze = (data) => {
-    const newState = Object.assign({}, MazeService().parseMaze(data), { iterations: 0, uploading: false })
+    const newState = Object.assign({}, MazeService().parseMaze(data), { iterations: 0 })
 
     this.setState(newState)
   }
@@ -66,6 +64,8 @@ class App extends Component {
 
     res.json().then((data) => {
       this.parseMaze(data)
+
+      setTimeout(() => { this.setState({ uploading: false }) }, 200)
     })
   }
 
@@ -197,7 +197,6 @@ class App extends Component {
           modal={false}
           open={this.state.showUpload}
           onRequestClose={this.hideUpload}
-          autoScrollBodyContent={true}
         >
           <div>
             <TextField
@@ -214,7 +213,7 @@ class App extends Component {
               fullWidth={true}
               multiLine={true}
               rows={10}
-              rowsMax={30}
+              rowsMax={15}
               inputStyle={{ fontFamily: 'monospace' }}
               onChange={this.onChangeMazeContent}
             />
@@ -282,7 +281,7 @@ class App extends Component {
               </ToolbarGroup>
               <ToolbarGroup lastChild={true}>
                 <RaisedButton
-                  label={this.state.uploading ? 'Uploading...' : 'Upload Maze'}
+                  label={this.state.uploading ? 'Solving...' : 'Upload Maze'}
                   onClick={this.showUpload}
                   disabled={this.state.uploading}
                 />

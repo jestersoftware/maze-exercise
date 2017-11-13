@@ -1,11 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
 # Maze Solver
 
 ## Table of Contents
 
-- [How To Use Maze Solver](#whatever-dude)
+- [How To Run Maze Solver](#how-to-run-maze-solver)
+- [Notes](#notes)
 
-## Whatever Dude
+## How To Run Maze Solver
 
-Hello World!
+`npm install`
+
+`npm start jesse`
+
+Go to `localhost:9000` in your browser
+
+Follow on-screen instructions
+
+Cheers!
+
+\- Jesse
+
+## Notes
+
+- Maze upload input is not validated. Please make sure **uploaded mazes are properly formatted** (like the 3 samples), and that **maze names are simple and unique**.
+- The MazeService is intentionally isomorphic.
+- Mazes are solved either with the `Solve Maze` button, which displays an animation, or with the `Upload Maze` button, which solves the maze on the server, but does not show an animation, until you use the `Solve Maze` button on the uploaded. I thought about implementing sockets but sadly ran out of time.

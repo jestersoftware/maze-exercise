@@ -21,10 +21,10 @@ const myThemeObj = {
   spacing: spacing,
   fontFamily: 'Roboto, sans-serif',
   palette: {
-    primary1Color: pinkA200,
-    primary2Color: cyan700,
+    primary1Color: '#0194d3',
+    primary2Color: '#0194d3',
     primary3Color: grey400,
-    accent1Color: cyan500,
+    accent1Color: '#0194d3',
     accent2Color: grey100,
     accent3Color: grey500,
     textColor: darkBlack,
@@ -34,7 +34,7 @@ const myThemeObj = {
     disabledColor: fade(darkBlack, 0.3),
     pickerHeaderColor: cyan500,
     clockCircleColor: fade(darkBlack, 0.07),
-    shadowColor: fullBlack,
+    shadowColor: fullBlack
   },
 }
 
