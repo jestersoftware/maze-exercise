@@ -9,7 +9,7 @@
 
 `npm install`
 
-`npm start jesse`
+`npm run jesse`
 
 Go to `localhost:9000` in your browser
 
