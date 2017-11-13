@@ -217,7 +217,7 @@ const getPathways = (maze, start, end, callback) => {
 
   let bestPathway = {}
 
-  const doIt = (returnObj1) => {
+  const iterate = (returnObj1) => {
     iteration++
 
     let mod = 1
@@ -231,11 +231,11 @@ const getPathways = (maze, start, end, callback) => {
     else if (iteration > 10)
       mod = 5
 
-    const whatever = () => {
+    const genPathways = () => {
       returnObj = generatePathways(maze, returnObj1.validNeighbors, end, returnObj1.pathways)
 
       if (returnObj.validNeighbors.length && iteration < 2000) {
-        doIt(returnObj)
+        iterate(returnObj)
       }
       else {
         bestPathway = getBestPathway(returnObj.pathways, end)
@@ -248,15 +248,15 @@ const getPathways = (maze, start, end, callback) => {
       callback(iteration, returnObj1.pathways)
 
       setTimeout(() => {
-        whatever()
+        genPathways()
       }, 200)
     }
     else {
-      whatever()
+      genPathways()
     }
   }
 
-  doIt(returnObj)
+  iterate(returnObj)
 
   return {
     iterations: iteration,
